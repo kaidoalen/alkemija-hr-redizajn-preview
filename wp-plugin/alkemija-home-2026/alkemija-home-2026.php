@@ -2,7 +2,7 @@
 /*
 Plugin Name: Alkemija Naslovnica 2026
 Description: Nova naslovnica alkemija.hr (EN na /, HR na /hr/, IT na /it/) iz samostalnih HTML datoteka u /pages/. Stara Elementor naslovnica (stranica 1479) ostaje netaknuta i prikazuje se na /home-2/ (noindex). ROLLBACK: deaktiviraj ovaj plugin — sve se vraća kako je bilo.
-Version: 1.0.4
+Version: 1.0.5
 Author: Alkemija
 Source: https://github.com/kaidoalen/alkemija-hr-redizajn-preview
 */
