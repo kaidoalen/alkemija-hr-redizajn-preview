@@ -2,6 +2,7 @@
 # Texts for the three language versions (EN = home, HR, IT). Same structure, same content.
 L = {}
 L['en'] = dict(
+ sc_intro='See real projects we are working on.',
  book='Book your appointment',
  book_prefill='I would like to book an appointment (call or Google Meet). Preferred days and times: ',
  sc_label='Real projects',
@@ -75,6 +76,7 @@ L['en'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['hr'] = dict(
+ sc_intro='Pogledajte stvarne projekte koje vodimo.',
  book='Rezervirajte termin',
  book_prefill='Želim rezervirati termin (poziv ili Google Meet). Odgovaraju mi dani i sati: ',
  sc_label='Stvarni projekti',
@@ -148,6 +150,7 @@ L['hr'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['it'] = dict(
+ sc_intro='Guardate i progetti reali che seguiamo.',
  book='Prenota un appuntamento',
  book_prefill='Vorrei prenotare un appuntamento (telefonata o Google Meet). Giorni e orari preferiti: ',
  sc_label='Progetti reali',

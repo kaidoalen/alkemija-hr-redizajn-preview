@@ -23,7 +23,7 @@
   f.addEventListener('submit',function(ev){
     ev.preventDefault(); st.className='fstatus'; st.textContent='';
     var bad=null;
-    f.querySelectorAll('[required]').forEach(function(i){
+    Array.prototype.filter.call(f.elements,function(i){return i.required}).forEach(function(i){
       var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';
       if(ok&&i.type==='email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(i.value.trim());
       i.setAttribute('aria-invalid',ok?'false':'true'); if(!ok&&!bad)bad=i;

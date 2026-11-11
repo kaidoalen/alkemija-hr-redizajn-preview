@@ -4,6 +4,8 @@ mode 'site' -> relative language links; mode 'preview' -> absolute preview URLs 
 import json, html, sys, os
 D = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, D)
 from content import L, LOGOS
+
+SHOW_CASE = False  # section 6 placeholder case card (template kept, not rendered)
 BASE = 'https://www.alkemija.hr/'
 PRIVACY = 'https://www.alkemija.hr/pravila-privatnosti/'
 LINKEDIN = 'https://www.linkedin.com/company/alkemija/'
@@ -104,7 +106,10 @@ def page(code, mode, preview=None):
         packs += (f'<article class="card pack rv{" featured" if ft else ""}" aria-labelledby="p{i}">{badge}<h3 class="name" id="p{i}">{n}</h3>'
                   f'<p class="price">{e(t["cur"](p))}</p><p class="vatx">{e(t["onetime"])} · {(e(t["countries"][i]) + " · ") if t["countries"][i] else ""}{e(t["vat_short"])}</p><ul class="ticks">{lis}</ul>'
                   f'<a class="btn {"btn-gold" if ft else "btn-line"}" href="#kontakt" data-pack="{n}">{e(t["pack_cta"])}</a></article>')
+    # Section 6 case card = TEMPLATE for a real, client-approved case (texts in content.py: case_note, case).
+    # Hidden while SHOW_CASE is False — set True only once real client data replaces the placeholders.
     case = ''.join(f'<div{" class=kpi" if 4 <= i <= 6 else ""}><dt>{e(a)}</dt><dd>{e(b)}</dd></div>' for i, (a, b) in enumerate(t['case']))
+    case_block = f'<div class="case rv"><span class="tag">{e(t["case_note"])}</span><dl>{case}</dl></div>' if SHOW_CASE else ''
     why = ''.join(f'<article class="card rv">{ic(["pin","chat","eye"][i])}<h3>{e(n)}</h3><p>{e(d)}</p></article>' for i, (n, d) in enumerate(t['why']))
     opts = f'<option value="">{e(f["pack_none"])}</option>' + ''.join(f'<option value="{n}">{n} — {e(t["cur"](p))} · {e(t["onetime_lc"])}</option>' for n, p, _ in t['packs'])
     msg = json.dumps(dict(err=f['err'], err_email=f['err_email'], mailto=f['mailto_msg'], sending=f['sending'], ok=f['ok'], fail=f['fail'],
@@ -215,8 +220,8 @@ def page(code, mode, preview=None):
 <section class="alt" aria-labelledby="s6">
   <div class="wrap">
     <div class="head"><p class="kicker">{e(t['s6_kicker'])}</p><h2 id="s6">{e(t['s6_h'])}</h2></div>
-    <div class="case rv"><span class="tag">{e(t['case_note'])}</span><dl>{case}</dl></div>
-    <div class="showcase rv"><p class="sc-l">{e(t['sc_label'])}</p><div class="sc-btns">{''.join(f'<a class="btn btn-line sc" href="{u}">{e(l)} {ic("arrow")}</a>' for l, u in t['showcase'])}</div></div>
+    {case_block}
+    <div class="showcase rv{'' if SHOW_CASE else ' solo'}"><p class="sc-intro">{e(t['sc_intro'])}</p><div class="sc-btns">{''.join(f'<a class="btn btn-line sc" href="{u}">{e(l)} {ic("arrow")}</a>' for l, u in t['showcase'])}</div></div>
   </div>
 </section>
 

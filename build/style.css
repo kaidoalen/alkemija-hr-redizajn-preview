@@ -233,3 +233,7 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 .lg img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.72;transition:opacity .25s,filter .25s}
 .lg li:hover img{filter:none;opacity:1}
 @media(max-width:600px){.lg{gap:1.1rem 1.8rem}.lg img{height:26px;max-width:110px}}
+
+/* Section 6 without the case card */
+.sc-intro{margin:0;font-size:1.06rem;color:var(--muted);max-width:60ch}
+.showcase.solo{margin-top:.4rem}
