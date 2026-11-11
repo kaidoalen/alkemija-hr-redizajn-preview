@@ -37,6 +37,7 @@ BRAND = (f'<img class="brand-logo" src="{LOGO}" alt="Alkemija" width="227" heigh
 
 # ---- Hero map: positions are approximate on purpose (clean layout over precision) ----
 NUDGE = {'Beograd':(213,168),'Sarajevo':(197,180),'Pristina':(218,186),'Podgorica':(203,196),'Skopje':(221,201)}
+CURVE = {'Tunis': (178, 215)}  # custom control point so the Tunis line passes east of Rome
 SKIP = {'Ljubljana'}  # too close to Zagreb
 NAMES = {  # localised labels
  'en':{'Paris':'Paris','Roma':'Rome','Athina':'Athens','Pristina':'Pristina'},
@@ -45,7 +46,7 @@ NAMES = {  # localised labels
 }
 # label placement: (dx, dy, anchor) relative to the node
 LAB = {'Paris':(-5,2.3,'end'),'Amsterdam':(0,-6,'middle'),'Wien':(5,-3,'start'),'Warszawa':(5,-3,'start'),
-       'Milano':(0,-6,'middle'),'Madrid':(5,6,'start'),'Roma':(-5,4,'end'),'Athina':(5,4,'start'),'Rabat':(5,4,'start')}
+       'Milano':(0,-6,'middle'),'Madrid':(5,6,'start'),'Roma':(-5,4,'end'),'Athina':(5,4,'start'),'Rabat':(5,4,'start'),'Tunis':(5,4,'start')}
 # Balkan cluster: labels in a column to the east with thin leader lines
 COL_X = 246; COL = [('Beograd',166),('Sarajevo',177),('Pristina',188),('Podgorica',199),('Skopje',210)]
 def europe_svg(t):
@@ -57,6 +58,7 @@ def europe_svg(t):
     for i, (name, (x, y)) in enumerate(c.items()):
         if name == 'Zagreb': continue
         mx, my = (hub[0]+x)/2, (hub[1]+y)/2 - abs(hub[0]-x)*0.18 - 6
+        if name in CURVE: mx, my = CURVE[name]
         lines.append(f'<path class="route" style="animation-delay:-{i*0.9:.1f}s" d="M{hub[0]} {hub[1]}Q{mx:.1f} {my:.1f} {x} {y}"/>')
         nodes.append(f'<circle class="node" cx="{x}" cy="{y}" r="{2 if name in dict(COL) else 2.4}"/>')
     lab = ''.join(f'<text x="{c[n][0]+dx}" y="{c[n][1]+dy}" text-anchor="{an}">{e(nm(n))}</text>' for n, (dx, dy, an) in LAB.items())
