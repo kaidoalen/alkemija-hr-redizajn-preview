@@ -31,6 +31,6 @@ while lat>N0:
         lon+=step/math.cos(math.radians(lat))*0.75
     lat-=step*0.75
 VW,VH=proj(W1,N0)
-cities={'Zagreb':(15.98,45.81),'Milano':(9.19,45.46),'Wien':(16.37,48.21),'München':(11.58,48.14),'Paris':(2.35,48.86),'Amsterdam':(4.9,52.37),'Madrid':(-3.7,40.42),'Warszawa':(21.01,52.23),'Budapest':(19.04,47.5),'Beograd':(20.46,44.79),'Ljubljana':(14.5,46.05),'Sarajevo':(18.41,43.86),'Bruxelles':(4.35,50.85),'Roma':(12.5,41.9),'Athina':(23.73,37.98),'Rabat':(-6.84,34.02),'Podgorica':(19.26,42.44),'Pristina':(21.17,42.66),'Skopje':(21.43,42.0)}
+cities={'Zagreb':(15.98,45.81),'Milano':(9.19,45.46),'Wien':(16.37,48.21),'München':(11.58,48.14),'Paris':(2.35,48.86),'Amsterdam':(4.9,52.37),'Madrid':(-3.7,40.42),'Warszawa':(21.01,52.23),'Budapest':(19.04,47.5),'Beograd':(20.46,44.79),'Ljubljana':(14.5,46.05),'Sarajevo':(18.41,43.86),'Bruxelles':(4.35,50.85),'Roma':(12.5,41.9),'Athina':(23.73,37.98),'Rabat':(-6.84,34.02),'Podgorica':(19.26,42.44),'Pristina':(21.17,42.66),'Skopje':(21.43,42.0),'Tunis':(10.18,36.8)}
 json.dump({'w':VW,'h':VH,'dots':[(round(x,1),round(y,1)) for x,y in dots],'cities':{k:tuple(round(v,1) for v in proj(*c)) for k,c in cities.items()}},open('/workspace/alkemija-hr-redizajn-20261111/build/map.json','w'))
 print(len(dots),VW,VH)
