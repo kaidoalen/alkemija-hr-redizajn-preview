@@ -2,6 +2,7 @@
 # Texts for the three language versions (EN = home, HR, IT). Same structure, same content.
 L = {}
 L['en'] = dict(
+ onetime='One-time fee', onetime_lc='one-time fee',
  countries=[None,'3 countries','5 countries'],
  lang='en', locale='en_GB', path='',
  title='Alkemija Business Studio | B2B partners, distributors and market development',
@@ -69,6 +70,7 @@ L['en'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['hr'] = dict(
+ onetime='Jednokratna naknada', onetime_lc='jednokratna naknada',
  countries=[None,'3 zemlje','5 zemalja'],
  lang='hr', locale='hr_HR', path='hr/',
  title='Alkemija Business Studio | B2B partneri, distributeri i razvoj tržišta',
@@ -136,6 +138,7 @@ L['hr'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['it'] = dict(
+ onetime='Compenso una tantum', onetime_lc='compenso una tantum',
  countries=[None,'3 paesi','5 paesi'],
  lang='it', locale='it_IT', path='it/',
  title='Alkemija Business Studio | Partner B2B, distributori e sviluppo dei mercati',
