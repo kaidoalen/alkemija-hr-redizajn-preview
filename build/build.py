@@ -101,7 +101,7 @@ def page(code, mode, preview=None):
         lis = ''.join(f'<li>{ic("check")}<span>{e(x)}</span></li>' for x in items)
         badge = f'<span class="badge">{e(t["rec"])}</span>' if ft else ''
         packs += (f'<article class="card pack rv{" featured" if ft else ""}" aria-labelledby="p{i}">{badge}<h3 class="name" id="p{i}">{n}</h3>'
-                  f'<p class="price">{e(t["cur"](p))}</p><p class="vatx">{e(t["vat_short"])}</p><ul class="ticks">{lis}</ul>'
+                  f'<p class="price">{e(t["cur"](p))}</p><p class="vatx">{(e(t["countries"][i]) + " · ") if t["countries"][i] else ""}{e(t["vat_short"])}</p><ul class="ticks">{lis}</ul>'
                   f'<a class="btn {"btn-gold" if ft else "btn-line"}" href="#kontakt" data-pack="{n}">{e(t["pack_cta"])}</a></article>')
     case = ''.join(f'<div{" class=kpi" if 4 <= i <= 6 else ""}><dt>{e(a)}</dt><dd>{e(b)}</dd></div>' for i, (a, b) in enumerate(t['case']))
     why = ''.join(f'<article class="card rv">{ic(["pin","chat","eye"][i])}<h3>{e(n)}</h3><p>{e(d)}</p></article>' for i, (n, d) in enumerate(t['why']))
