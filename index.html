@@ -261,6 +261,10 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 .lg img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.72;transition:opacity .25s,filter .25s}
 .lg li:hover img{filter:none;opacity:1}
 @media(max-width:600px){.lg{gap:1.1rem 1.8rem}.lg img{height:26px;max-width:110px}}
+
+/* Section 6 without the case card */
+.sc-intro{margin:0;font-size:1.06rem;color:var(--muted);max-width:60ch}
+.showcase.solo{margin-top:.4rem}
 </style>
 </head>
 <body>
@@ -341,8 +345,8 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 <section class="alt" aria-labelledby="s6">
   <div class="wrap">
     <div class="head"><p class="kicker">From the field</p><h2 id="s6">What does work on the ground look like?</h2></div>
-    <div class="case rv"><span class="tag">Template for a real client case. Data will be published only with the client’s consent.</span><dl><div><dt>Client’s industry</dt><dd>[INDUSTRY]</dd></div><div><dt>Target country or region</dt><dd>[COUNTRY]</dd></div><div><dt>Initial business challenge</dt><dd>[CHALLENGE]</dd></div><div><dt>What Alkemija did</dt><dd>[ACTIVITIES]</dd></div><div class=kpi><dt>Companies contacted</dt><dd>[NUMBER]</dd></div><div class=kpi><dt>Relevant replies</dt><dd>[NUMBER]</dd></div><div class=kpi><dt>Qualified conversations</dt><dd>[NUMBER]</dd></div><div><dt>Result achieved</dt><dd>[RESULT]</dd></div></dl></div>
-    <div class="showcase rv"><p class="sc-l">Real projects</p><div class="sc-btns"><a class="btn btn-line sc" href="https://alkemija.com/showcase-1-en/">Showcase 1 · Italian product distribution in Croatia &amp; the Balkans <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line sc" href="https://alkemija.com/showcase-2-en/">Showcase 2 · Entering the Croatian &amp; Balkan market <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    
+    <div class="showcase rv solo"><p class="sc-intro">See real projects we are working on.</p><div class="sc-btns"><a class="btn btn-line sc" href="https://alkemija.com/showcase-1-en/">Showcase 1 · Italian product distribution in Croatia &amp; the Balkans <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line sc" href="https://alkemija.com/showcase-2-en/">Showcase 2 · Entering the Croatian &amp; Balkan market <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
   </div>
 </section>
 
@@ -480,7 +484,7 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
   f.addEventListener('submit',function(ev){
     ev.preventDefault(); st.className='fstatus'; st.textContent='';
     var bad=null;
-    f.querySelectorAll('[required]').forEach(function(i){
+    Array.prototype.filter.call(f.elements,function(i){return i.required}).forEach(function(i){
       var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';
       if(ok&&i.type==='email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(i.value.trim());
       i.setAttribute('aria-invalid',ok?'false':'true'); if(!ok&&!bad)bad=i;

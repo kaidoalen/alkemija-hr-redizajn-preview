@@ -43,3 +43,9 @@ Puni backup (Duplicator arhiva + baza, WXR, Elementor JSON) je na Grok boxu: `/w
 - Sekcija 6 (primjer s terena): 2 gumba Showcase, originalni linkovi po jeziku: HR showcase-1-hr / showcase-2-hr, EN showcase-1-en / showcase-2-en, IT showcase-1 / showcase-2 (sve na alkemija.com).
 - Nova tamna traka logotipa ispod sekcije 6: 7 logotipa, iste datoteke i redoslijed kao stara naslovnica (alk-logo-select, porta, media, kaido, prima, maslina, zoo), bez linkova.
 - Rollback: wp-plugin/rollback-alkemija-home-2026-1.0.3.zip (lokalno na boxu) ili deaktivacija plugina.
+
+## 1.0.5 (2026-11-11) — sekcija 6 bez predloška
+- Uklonjena kartica-predložak ([DJELATNOST]…[REZULTAT] + „Predložak za stvarni poslovni slučaj…”) na EN/HR/IT. Ostaju naslov, uvodna rečenica (HR „Pogledajte stvarne projekte koje vodimo.” / EN „See real projects we are working on.” / IT „Guardate i progetti reali che seguiamo.”) i 2 Showcase gumba.
+- Predložak ostaje u kodu: build/build.py `SHOW_CASE = False` (tekstovi u content.py: case_note, case). Kad stignu stvarni podaci klijenta: popuniti content.py, `SHOW_CASE = True`, rebuild, novi plugin.
+- Nema uglatih placeholdera na stranicama; JS selektor `[required]` zamijenjen s filtrom po `f.elements`.
+- Rollback: wp-plugin/rollback-alkemija-home-2026-1.0.4.zip.

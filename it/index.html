@@ -261,6 +261,10 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 .lg img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.72;transition:opacity .25s,filter .25s}
 .lg li:hover img{filter:none;opacity:1}
 @media(max-width:600px){.lg{gap:1.1rem 1.8rem}.lg img{height:26px;max-width:110px}}
+
+/* Section 6 without the case card */
+.sc-intro{margin:0;font-size:1.06rem;color:var(--muted);max-width:60ch}
+.showcase.solo{margin-top:.4rem}
 </style>
 </head>
 <body>
@@ -341,8 +345,8 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 <section class="alt" aria-labelledby="s6">
   <div class="wrap">
     <div class="head"><p class="kicker">Dal campo</p><h2 id="s6">Com’è il lavoro sul campo?</h2></div>
-    <div class="case rv"><span class="tag">Modello per un caso reale. I dati saranno pubblicati solo con il consenso del cliente.</span><dl><div><dt>Settore del cliente</dt><dd>[SETTORE]</dd></div><div><dt>Paese o regione target</dt><dd>[PAESE]</dd></div><div><dt>Sfida iniziale</dt><dd>[SFIDA]</dd></div><div><dt>Cosa ha fatto Alkemija</dt><dd>[ATTIVITÀ]</dd></div><div class=kpi><dt>Aziende contattate</dt><dd>[NUMERO]</dd></div><div class=kpi><dt>Risposte pertinenti</dt><dd>[NUMERO]</dd></div><div class=kpi><dt>Conversazioni qualificate</dt><dd>[NUMERO]</dd></div><div><dt>Risultato ottenuto</dt><dd>[RISULTATO]</dd></div></dl></div>
-    <div class="showcase rv"><p class="sc-l">Progetti reali</p><div class="sc-btns"><a class="btn btn-line sc" href="https://alkemija.com/showcase-1/">Showcase 1 · Distribuzione di prodotti italiani in Croazia e nei Balcani <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line sc" href="https://alkemija.com/showcase-2/">Showcase 2 · Vendere in Croazia e nei Balcani: un caso reale <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    
+    <div class="showcase rv solo"><p class="sc-intro">Guardate i progetti reali che seguiamo.</p><div class="sc-btns"><a class="btn btn-line sc" href="https://alkemija.com/showcase-1/">Showcase 1 · Distribuzione di prodotti italiani in Croazia e nei Balcani <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line sc" href="https://alkemija.com/showcase-2/">Showcase 2 · Vendere in Croazia e nei Balcani: un caso reale <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
   </div>
 </section>
 
@@ -480,7 +484,7 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
   f.addEventListener('submit',function(ev){
     ev.preventDefault(); st.className='fstatus'; st.textContent='';
     var bad=null;
-    f.querySelectorAll('[required]').forEach(function(i){
+    Array.prototype.filter.call(f.elements,function(i){return i.required}).forEach(function(i){
       var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';
       if(ok&&i.type==='email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(i.value.trim());
       i.setAttribute('aria-invalid',ok?'false':'true'); if(!ok&&!bad)bad=i;
