@@ -37,3 +37,9 @@ Puni backup (Duplicator arhiva + baza, WXR, Elementor JSON) je na Grok boxu: `/w
 - Nikad ime „Alen Duka“ na stranici. Bez AI/automatizacije kao prednosti. Bez izmišljenih brojki/klijenata.
 - Cjenik `/cjenik/` i ostale stranice nisu dirane.
 - Lozinke nikad u repo.
+
+## 1.0.4 (2026-11-11) — Book / Showcase / logotipi sa stare naslovnice
+- Hero: tekstualni CTA „Book your appointment / Rezervirajte termin / Prenota un appuntamento” → #kontakt (obrazac se predpopuni zahtjevom za termin). Stara naslovnica NIJE imala booking gumb ni link — nije izmišljen vanjski URL.
+- Sekcija 6 (primjer s terena): 2 gumba Showcase, originalni linkovi po jeziku: HR showcase-1-hr / showcase-2-hr, EN showcase-1-en / showcase-2-en, IT showcase-1 / showcase-2 (sve na alkemija.com).
+- Nova tamna traka logotipa ispod sekcije 6: 7 logotipa, iste datoteke i redoslijed kao stara naslovnica (alk-logo-select, porta, media, kaido, prima, maslina, zoo), bez linkova.
+- Rollback: wp-plugin/rollback-alkemija-home-2026-1.0.3.zip (lokalno na boxu) ili deaktivacija plugina.
