@@ -2,6 +2,7 @@
 # Texts for the three language versions (EN = home, HR, IT). Same structure, same content.
 L = {}
 L['en'] = dict(
+ countries=[None,'3 countries','5 countries'],
  lang='en', locale='en_GB', path='',
  title='Alkemija Business Studio | B2B partners, distributors and market development',
  desc='Alkemija Business Studio from Zagreb finds buyers, distributors and business partners, develops new markets and maintains business communication.',
@@ -35,9 +36,9 @@ L['en'] = dict(
   ('We hand over opportunities','You receive documented contacts, the status of each conversation and agreed next steps.')],
  s5_kicker='Packages', s5_h='A clear start. Concrete work. Measurable results.',
  cur=lambda n: '€'+n.replace('.',','), rec='Recommended start',
- packs=[('START','1.500',['Duration: 14 days','30 target companies','15 verified contacts','Market analysis','Business approach plan']),
-  ('GROWTH','2.500',['Duration: 30 days','80 target companies','30–40 verified contacts','Active outreach','Target: 3–5 qualified conversations','Documented activity tracking']),
-  ('MARKET ACCESS','4.500',['Duration: 45 days','Target market analysis','100 target companies','40–50 verified contacts','Multichannel approach','Target: 4–6 qualified conversations','Final report and recommendations'])],
+ packs=[('START','720',['Duration: 14 days','30 target companies','15 verified contacts','Market analysis','Business approach plan']),
+  ('GROWTH','1.240',['Duration: 30 days','80 target companies','30–40 verified contacts','Active outreach','Target: 3–5 qualified conversations','Documented activity tracking']),
+  ('MARKET ACCESS','2.260',['Duration: 45 days','Target market analysis','100 target companies','40–50 verified contacts','Multichannel approach','Target: 4–6 qualified conversations','Final report and recommendations'])],
  pack_cta='Request a proposal for this package',
  vat_short='excl. VAT', vat='All prices exclude VAT.', target_note='Conversation numbers are project targets, not guaranteed results.',
  limits='We do not sell contact databases and we do not promise sales. We bring you to the table — the deal stays in your hands.',
@@ -68,6 +69,7 @@ L['en'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['hr'] = dict(
+ countries=[None,'3 zemlje','5 zemalja'],
  lang='hr', locale='hr_HR', path='hr/',
  title='Alkemija Business Studio | B2B partneri, distributeri i razvoj tržišta',
  desc='Alkemija Business Studio iz Zagreba pronalazi kupce, distributere i poslovne partnere, razvija nova tržišta i održava poslovnu komunikaciju.',
@@ -101,9 +103,9 @@ L['hr'] = dict(
   ('Predajemo prilike','Dobivate dokumentirane kontakte, status komunikacije i dogovorene sljedeće korake.')],
  s5_kicker='Paketi', s5_h='Jasan početak. Konkretan posao. Mjerljivi rezultati.',
  cur=lambda n: n+' €', rec='Preporučeni početak',
- packs=[('START','1.500',['Trajanje: 14 dana','30 ciljnih tvrtki','15 provjerenih kontakata','Analiza tržišta','Plan poslovnog pristupa']),
-  ('GROWTH','2.500',['Trajanje: 30 dana','80 ciljnih tvrtki','30–40 provjerenih kontakata','Aktivno kontaktiranje','Cilj: 3–5 kvalificiranih razgovora','Dokumentirano praćenje aktivnosti']),
-  ('MARKET ACCESS','4.500',['Trajanje: 45 dana','Analiza ciljanog tržišta','100 ciljnih tvrtki','40–50 provjerenih kontakata','Višekanalni pristup','Cilj: 4–6 kvalificiranih razgovora','Završni izvještaj i preporuke'])],
+ packs=[('START','720',['Trajanje: 14 dana','30 ciljnih tvrtki','15 provjerenih kontakata','Analiza tržišta','Plan poslovnog pristupa']),
+  ('GROWTH','1.240',['Trajanje: 30 dana','80 ciljnih tvrtki','30–40 provjerenih kontakata','Aktivno kontaktiranje','Cilj: 3–5 kvalificiranih razgovora','Dokumentirano praćenje aktivnosti']),
+  ('MARKET ACCESS','2.260',['Trajanje: 45 dana','Analiza ciljanog tržišta','100 ciljnih tvrtki','40–50 provjerenih kontakata','Višekanalni pristup','Cilj: 4–6 kvalificiranih razgovora','Završni izvještaj i preporuke'])],
  pack_cta='Zatraži ponudu za ovaj paket',
  vat_short='bez PDV-a', vat='Sve cijene su bez PDV-a.', target_note='Brojevi razgovora predstavljaju projektne ciljeve, ne zajamčene rezultate.',
  limits='Ne prodajemo baze kontakata i ne obećavamo prodaju. Dovodimo vas za stol — posao ostaje u vašim rukama.',
@@ -134,6 +136,7 @@ L['hr'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['it'] = dict(
+ countries=[None,'3 paesi','5 paesi'],
  lang='it', locale='it_IT', path='it/',
  title='Alkemija Business Studio | Partner B2B, distributori e sviluppo dei mercati',
  desc='Alkemija Business Studio di Zagabria trova clienti, distributori e partner commerciali, sviluppa nuovi mercati e cura la comunicazione d’affari.',
@@ -167,9 +170,9 @@ L['it'] = dict(
   ('Consegniamo le opportunità','Ricevete contatti documentati, lo stato della comunicazione e i passi successivi concordati.')],
  s5_kicker='Pacchetti', s5_h='Un inizio chiaro. Lavoro concreto. Risultati misurabili.',
  cur=lambda n: n+' €', rec='Inizio consigliato',
- packs=[('START','1.500',['Durata: 14 giorni','30 aziende target','15 contatti verificati','Analisi di mercato','Piano di approccio commerciale']),
-  ('GROWTH','2.500',['Durata: 30 giorni','80 aziende target','30–40 contatti verificati','Contatto attivo','Obiettivo: 3–5 conversazioni qualificate','Monitoraggio documentato delle attività']),
-  ('MARKET ACCESS','4.500',['Durata: 45 giorni','Analisi del mercato target','100 aziende target','40–50 contatti verificati','Approccio multicanale','Obiettivo: 4–6 conversazioni qualificate','Report finale e raccomandazioni'])],
+ packs=[('START','720',['Durata: 14 giorni','30 aziende target','15 contatti verificati','Analisi di mercato','Piano di approccio commerciale']),
+  ('GROWTH','1.240',['Durata: 30 giorni','80 aziende target','30–40 contatti verificati','Contatto attivo','Obiettivo: 3–5 conversazioni qualificate','Monitoraggio documentato delle attività']),
+  ('MARKET ACCESS','2.260',['Durata: 45 giorni','Analisi del mercato target','100 aziende target','40–50 contatti verificati','Approccio multicanale','Obiettivo: 4–6 conversazioni qualificate','Report finale e raccomandazioni'])],
  pack_cta='Richiedi un’offerta per questo pacchetto',
  vat_short='IVA esclusa', vat='Tutti i prezzi si intendono IVA esclusa.', target_note='Il numero di conversazioni è un obiettivo di progetto, non un risultato garantito.',
  limits='Non vendiamo banche dati di contatti e non promettiamo vendite. Vi portiamo al tavolo — la trattativa resta nelle vostre mani.',
