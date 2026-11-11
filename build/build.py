@@ -3,7 +3,7 @@
 mode 'site' -> relative language links; mode 'preview' -> absolute preview URLs (JSON arg)."""
 import json, html, sys, os
 D = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, D)
-from content import L
+from content import L, LOGOS
 BASE = 'https://www.alkemija.hr/'
 PRIVACY = 'https://www.alkemija.hr/pravila-privatnosti/'
 LINKEDIN = 'https://www.linkedin.com/company/alkemija/'
@@ -23,6 +23,7 @@ ICON = {
  'chat':'<path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
  'eye':'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
  'check':'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+ 'cal':'<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/>',
  'arrow':'<path d="M5 12h14M13 6l6 6-6 6"/>',
  'wa':'<path d="M20 11.6a8.2 8.2 0 01-12.2 7.2L3.5 20l1.3-4.1A8.2 8.2 0 1120 11.6z"/><path d="M9.2 8.2c.2 3.1 2.6 5.6 5.7 6l1-1.3 1.5.8c-.3.9-1.2 1.6-2.2 1.5-3.6-.4-6.4-3.2-6.8-6.8-.1-1 .6-1.9 1.5-2.2l.9 1.5z" fill="currentColor" stroke="none"/>',
  'mail':'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/>',
@@ -166,6 +167,7 @@ def page(code, mode, preview=None):
         <a class="btn btn-gold" href="#kontakt">{e(t['cta1'])} {ic('arrow')}</a>
         <a class="btn btn-line" href="{WA}" target="_blank" rel="noopener">{ic('wa')} {e(t['wa'])}</a>
       </div>
+      <p class="book"><a class="tlink" href="#kontakt" data-book="{e(t['book_prefill'])}">{ic('cal')} {e(t['book'])} {ic('arrow')}</a></p>
     </div>
     <div class="map-box">
       {europe_svg(t)}
@@ -214,7 +216,13 @@ def page(code, mode, preview=None):
   <div class="wrap">
     <div class="head"><p class="kicker">{e(t['s6_kicker'])}</p><h2 id="s6">{e(t['s6_h'])}</h2></div>
     <div class="case rv"><span class="tag">{e(t['case_note'])}</span><dl>{case}</dl></div>
+    <div class="showcase rv"><p class="sc-l">{e(t['sc_label'])}</p><div class="sc-btns">{''.join(f'<a class="btn btn-line sc" href="{u}">{e(l)} {ic("arrow")}</a>' for l, u in t['showcase'])}</div></div>
   </div>
+</section>
+
+<!-- ============ LOGOS (same files/order as the old home) ============ -->
+<section class="logos" aria-labelledby="lg-h">
+  <div class="wrap"><p class="lg-h" id="lg-h">{e(t['logos_label'])}</p><ul class="lg">{''.join(f'<li><img src="{u}" alt="{e(n)}" loading="lazy" decoding="async"></li>' for u, n in LOGOS)}</ul></div>
 </section>
 
 <!-- ============ 7. WHY ALKEMIJA ============ -->

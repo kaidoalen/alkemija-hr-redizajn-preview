@@ -217,3 +217,19 @@ footer .langs a[aria-current]{color:#fff;background:rgba(255,255,255,.08)}
 .eyebrow .sep{padding:0 .35em}
 @media(max-width:639px){.eyebrow .p{display:block}.eyebrow .sep{display:none}.ctas .btn{width:100%}.hero .eyebrow{letter-spacing:.14em}}
 .pack .btn{font-size:.95rem;padding:.8rem 1.1rem}
+
+/* ===== Book link, showcase buttons, logos strip (from the old home) ===== */
+.book{margin:1.1rem 0 0}
+.book .ic{width:18px;height:18px}
+.showcase{margin-top:2rem;display:grid;gap:.9rem}
+.sc-l{margin:0;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);font-weight:600}
+.sc-btns{display:grid;gap:.75rem}
+.sc-btns .btn{justify-content:space-between;text-align:left;border-radius:14px;min-height:56px}
+.sc-btns .btn .ic{color:var(--gold)}
+@media(min-width:900px){.sc-btns{grid-template-columns:1fr 1fr}}
+.logos{background:var(--navy);padding:clamp(2.2rem,5vw,3.2rem) 0}
+.lg-h{margin:0 0 1.4rem;text-align:center;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);font-weight:600}
+.lg{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.4rem 2.6rem}
+.lg img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.72;transition:opacity .25s,filter .25s}
+.lg li:hover img{filter:none;opacity:1}
+@media(max-width:600px){.lg{gap:1.1rem 1.8rem}.lg img{height:26px;max-width:110px}}

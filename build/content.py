@@ -2,6 +2,11 @@
 # Texts for the three language versions (EN = home, HR, IT). Same structure, same content.
 L = {}
 L['en'] = dict(
+ book='Book your appointment',
+ book_prefill='I would like to book an appointment (call or Google Meet). Preferred days and times: ',
+ sc_label='Real projects',
+ showcase=[('Showcase 1 · Italian product distribution in Croatia & the Balkans', 'https://alkemija.com/showcase-1-en/'), ('Showcase 2 · Entering the Croatian & Balkan market', 'https://alkemija.com/showcase-2-en/')],
+ logos_label='Companies we have worked with',
  onetime='One-time fee', onetime_lc='one-time fee',
  countries=[None,'3 countries','5 countries'],
  lang='en', locale='en_GB', path='',
@@ -70,6 +75,11 @@ L['en'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['hr'] = dict(
+ book='Rezervirajte termin',
+ book_prefill='Želim rezervirati termin (poziv ili Google Meet). Odgovaraju mi dani i sati: ',
+ sc_label='Stvarni projekti',
+ showcase=[('Showcase 1 · Distribucija talijanskih proizvoda u regiji', 'https://alkemija.com/showcase-1-hr/'), ('Showcase 2 · Ulazak na tržište Hrvatske i regije', 'https://alkemija.com/showcase-2-hr/')],
+ logos_label='Tvrtke s kojima smo radili',
  onetime='Jednokratna naknada', onetime_lc='jednokratna naknada',
  countries=[None,'3 zemlje','5 zemalja'],
  lang='hr', locale='hr_HR', path='hr/',
@@ -138,6 +148,11 @@ L['hr'] = dict(
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
 L['it'] = dict(
+ book='Prenota un appuntamento',
+ book_prefill='Vorrei prenotare un appuntamento (telefonata o Google Meet). Giorni e orari preferiti: ',
+ sc_label='Progetti reali',
+ showcase=[('Showcase 1 · Distribuzione di prodotti italiani in Croazia e nei Balcani', 'https://alkemija.com/showcase-1/'), ('Showcase 2 · Vendere in Croazia e nei Balcani: un caso reale', 'https://alkemija.com/showcase-2/')],
+ logos_label='Aziende con cui abbiamo lavorato',
  onetime='Compenso una tantum', onetime_lc='compenso una tantum',
  countries=[None,'3 paesi','5 paesi'],
  lang='it', locale='it_IT', path='it/',
@@ -205,3 +220,6 @@ L['it'] = dict(
  legal='Alkemija, obrt (ditta individuale)', footer_tag='Siamo la vostra squadra sul campo.', rights='Tutti i diritti riservati.', privacy='Informativa sulla privacy', li_inv='Collegatevi con noi su LinkedIn', og_alt='Alkemija Business Studio — Siamo la vostra squadra sul campo.',
  lang_names={'en':'English','hr':'Hrvatski','it':'Italiano'},
 )
+
+# Logos strip — same files and order as the old home (page 1479, var logos)
+LOGOS = [("https://www.alkemija.hr/wp-content/uploads/alk-logo-select.png","Select One"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-porta.png","Porta Marina"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-media.png","Media Propellente"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-kaido.png","Kaido"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-prima.png","Prima Dent Dubrava"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-maslina.png","Maslina"),("https://www.alkemija.hr/wp-content/uploads/alk-logo-zoo.png","Zoo Produkt")]

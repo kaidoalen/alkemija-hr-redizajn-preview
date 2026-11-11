@@ -16,6 +16,7 @@
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(x){io.observe(x)})}
   else els.forEach(function(x){x.classList.add('in')});
   // Package buttons preselect the package in the form
+  d.querySelectorAll('[data-book]').forEach(function(a){a.addEventListener('click',function(){var g=d.getElementById('f-goal');if(g&&!g.value)g.value=a.getAttribute('data-book');setTimeout(function(){var n=d.getElementById('f-name');if(n)n.focus({preventScroll:true})},600)})});
   d.querySelectorAll('[data-pack]').forEach(function(a){a.addEventListener('click',function(){d.getElementById('f-pack').value=a.getAttribute('data-pack')})});
   // Inquiry form
   var f=d.getElementById('inquiry'), st=f.querySelector('.fstatus');
